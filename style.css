@@ -1,0 +1,144 @@
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+h1 {
+    text-align: center;
+    font-size: 90px;
+    color: rgb(226, 29, 184);
+    background-color: rgb(241, 241, 227);
+    margin: -10px;
+    min-height: 10vh;
+
+}
+
+/* Step 1: Scene Likhna (Animation banaya) */
+@keyframes leftSeAao {
+    from {
+        margin-left: -500px;
+        /* Text ko left side mein screen ke bahar chhupa diya */
+    }
+
+    to {
+        margin-left: 0px;
+        /* Text chalkar wapas apni normal jagah (0px) par aa gaya */
+    }
+}
+
+/* Step 2: Action Bolna (Animation lagaya) */
+h1 {
+    animation: leftSeAao 2s;
+    /* h1 ko bola: "leftSeAao" wale scene ko 2 second mein pura karo */
+}
+
+img {
+    width: 450px;
+    max-width: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    float: right;
+    padding: 1%;
+    margin: 10px;
+
+}
+
+/* Step 1: Scene Likhna (Animation banana) */
+@keyframes rightSeAao {
+    from {
+        transform: translateX(100%);
+        /* Element ko right side screen ke bahar chhupa diya */
+        opacity: 0;
+        /* Shuru mein gayab rakha taaki effect smooth aaye */
+    }
+
+    to {
+        transform: translateX(0);
+        /* Element chalkar wapas apni normal jagah (0) par aa gaya */
+        opacity: 1;
+        /* Pura dikhne laga */
+    }
+}
+
+/* Step 2: Action Bolna (Kisi element par lagana) */
+img {
+    animation: rightSeAao 2s;
+    /* Image ko bola: 'rightSeAao' wala rasta 2 second mein pura karo */
+}
+
+.b2 {
+ font-size: 90px;
+  text-align: justify;
+  padding: auto;
+  animation-name: uparAao;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes uparAao {
+    from {
+        transform: translateY(100px);
+        /* Element normal jagah se 100px neeche rahega */
+        opacity: 0;
+        /* Shuru me poori tarah gayab (invisible) rahega */
+    }
+
+    to {
+        transform: translateY(0);
+        /* Wapas apni asli jagah par aa jayega */
+        opacity: 1;
+    }
+}
+
+.p2 {
+    text-align: justify;
+    padding: 20px;
+    font-size: 450%;
+    font-style: italic;
+    animation-name: uparAao;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes uparAao {
+    from {
+        transform: translateY(100px);
+        /* Element normal jagah se 100px neeche rahega */
+        opacity: 0;
+        /* Shuru me poori tarah gayab (invisible) rahega */
+    }
+
+    to {
+        transform: translateY(0);
+        /* Wapas apni asli jagah par aa jayega */
+        opacity: 1;
+    }
+}
+
+/* 📱 MOBILE PHONES KE LIYE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        /* Mobile par chota heading */
+    }
+
+    img {
+        float: none;
+        /* Mobile par image center me dikhegi */
+        display: block;
+        margin: 20px auto;
+        width: 300px;
+    }
+
+    p {
+        font-size: 40px;
+        /* Mobile par paragraph ka size */
+    }
+
+    .p2 {
+        font-size: 20px;
+    }
+}
